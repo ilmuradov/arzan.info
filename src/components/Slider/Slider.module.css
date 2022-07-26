@@ -1,0 +1,29 @@
+.container {
+    height: 200px;
+    width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10vh auto 0 auto;
+    /* background-color: black; */
+    border: 2px solid var(--color-green);
+}
+
+.box {
+    /* background: orange; */
+    height: 100%;
+    width: 400px;
+    margin: 0 -400px;
+    animation: move infinite 3s alternate;
+}
+
+@keyframes move {
+    /* 0% {
+        margin-left: 0px;
+      }
+      50% {
+        margin-left: -100px;
+      }
+      100% {
+        margin-left: -200px;
+      } */
+  }
