@@ -1,15 +1,16 @@
 import classes from "./Story-view.module.css"
+import StoryViewItem from "./Story-view-item"
+import left from "../../assets/stories/left-arrow.png"
+import right from "../../assets/stories/right-arrow.png"
 
-const StoryView = ({ img, viewStory, toggleView }) => {
+const StoryView = (props) => {
     return (
-        <div className={viewStory ? classes.viewStory : classes.viewStory__hidden}>
-            <div className={viewStory ? classes.storyContainer : null}>
-                <img src={img} alt="" />
-                <div>
-                    <button onClick={() => toggleView(false)}> Close </button>
-                </div>
-                <div style={{background: "black"}}></div>
-            </div>
+        <div className={props.viewStory ? classes.viewStory : classes.viewStory__hidden}>
+            {props.id === 1 ? null : <StoryViewItem {...props} left={true} />}
+            {props.id === 1 ? null : <img src={left} alt=" Previous " />}
+            <StoryViewItem {...props} main={true} />
+            {props.last ? null : <img src={right} alt=" Next " />}
+            <StoryViewItem {...props} right={true} />
         </div>
     )
 }

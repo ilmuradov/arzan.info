@@ -1,21 +1,30 @@
 .container {
-    padding: 0 10%;
+    width: auto;
     margin: 5vh auto 0 auto;
-    /* border: 2px solid var(--color-green); */
-}
-
-.img {
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 280px;
-    border-radius: 20px;
 }
 
-.img img {
+.container ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    transition: all 750ms ease;
+    left: 0;
+}
+
+.container ul li {
+    height: 100%;
+    float: left;
+}
+
+.container ul li img {
+    margin: auto;
     width: 100%;
     height: 280px;
+    border-radius: 20px;
 }
 
 @media screen and (min-width: 1500px) {

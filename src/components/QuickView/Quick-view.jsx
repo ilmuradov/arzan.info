@@ -7,7 +7,6 @@ import saved from "../../assets/discounts/saved.png"
 
 
 const QuickView = ({logo, photo, quickView, toggleQuickView, isSaved, isLiked, toggleLiked, toggleSaved}) => {
-    debugger
     return (
         <div className={quickView ? classes.quickView : classes.quickView__hidden}>
             <div className={quickView ? classes.quickContainer : null}>

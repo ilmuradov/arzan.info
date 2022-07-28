@@ -34,26 +34,26 @@ const Header = () => {
     return (
         <div className={classes.header}>
             <div className={classes.navigation}>
-                <div className={classes.logo} onClick={() => navigate("/")}>
-                    <img src={arzan} alt="Arzan.info" />
-                </div>
+                <div className={classes.logo}>
+                    <img className={classes.logo_img} src={arzan} alt="Arzan.info" onClick={() => navigate("/")} />
+                    <div className={classes.cities}>
+                        <div className={classes.dropdown}>
+                            <div className={classes.dropbtn}>
+                                <p> Ashgabat </p>
+                                <img className={classes.location} src={location} alt="Location" /> 
+                            </div>
 
-                <div className={classes.cities}>
-                    <div className={classes.dropdown}>
-                        <div className={classes.dropbtn}>
-                            <img className={classes.location} src={location} alt="Location" /> 
-                            <p> Ashgabat </p>
-                        </div>
-
-                        <div className={classes.dropdown_menu}>
-                            <p>Ahal</p>
-                            <p>Mary</p>
-                            <p>Lebap</p>
-                            <p>Dashoguz</p>
-                            <p>Balkan</p>
+                            <div className={classes.dropdown_menu}>
+                                <p>Ahal</p>
+                                <p>Mary</p>
+                                <p>Lebap</p>
+                                <p>Dashoguz</p>
+                                <p>Balkan</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div className={classes.profile}>
                     <Profile scrollPosition={scrollPosition} />
                 </div>
@@ -66,24 +66,28 @@ const Header = () => {
                 </div>
                 
                 <div className={classes.items}>
-                    <div> 
-                        <p> Officials </p>
-                        {/* <img src={officials} alt="" /> */}
+                    <div> <p> Officials </p> </div>
+                    <div onClick={() => navigate("/add")}> 
+                        <p> Add </p> 
                     </div>
-                    <div> 
-                        <p> Add </p>
+                    <div onClick={() => navigate("/news")}> 
+                        <p> News </p>
                     </div>
-                    <div>
-                        <p> About us </p>
-                    </div>
+                    <div> <p> Top Users </p> </div>
                 </div>
 
-                {scrollPosition > 100 && 
-                    <div className={classes.profile_items}>
-                        <Profile scrollPosition={scrollPosition} />
+                <div className={classes.profile_items}>
+                    <div className={classes.profile_items__items}>
+                        <div> <p> Konkurs </p> </div>
+                        <div> <p> About us </p> </div>
                     </div>
-                }
 
+                    <div className={classes.profilePlace}>
+                        <div className={scrollPosition > 100 ? classes.show : classes.hide}>
+                            <Profile scrollPosition={scrollPosition} />
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -10,20 +10,18 @@
     height: 100%;
     background-color: rgba(0, 0, 0, .7);
     animation: back .2s;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .viewStory__hidden {
     display: none;
 }
 
-.storyContainer {
-    width: 500px;
-    height: 800px;
-    margin: auto;
-    background-color: aliceblue;
-    animation: story .15s;
-    display: grid;
-    grid-template-rows: 1fr 11fr;
+.viewStory img {
+    height: 70px;
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 @keyframes back {
@@ -32,14 +30,5 @@
     }
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes story {
-    0% {
-        transform: scale(.8);
-    }
-    100% {
-        transform: scale(1);
     }
 }

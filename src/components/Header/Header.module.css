@@ -6,16 +6,17 @@
     grid-template-areas: "navigation"
     "navbar";
     position: relative;
+    z-index: 200;
 }
 
 .navigation {
     grid-area: navigation;
     display: grid;
-    grid-template-columns: .5fr .5fr 3fr .5fr;
+    grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 100px;
     gap: 0;
     grid-template-areas: 
-    "logo cities . profile";
+    "logo . profile";
     padding: 10px 10%;
 }
 
@@ -28,30 +29,30 @@
 .logo {
     grid-area: logo;
     cursor: pointer;
+    /* background-color: yellowgreen; */
 }
 
-.logo img {
-    width: 80%;
+.logo_img {
+    width: 60%;
+    margin-left: auto;
+    /* margin-right: 20px; */
 }
 
 .cities {
-    grid-area: cities;
+    padding: 10px;
 }
 
 .lang, .notifications {
     grid-area: lang;
-    display: flex;
-    align-items: center;
-    width: 40px;
+    
 }
-
 
 .profile {
     grid-area: profile;
     color: var(--color-green);
     display: flex;
-    justify-content: space-between;
-    width: 170px;
+    justify-content: right;
+    /* width: 130px; */
 }
 
 .profile_photo {
@@ -78,14 +79,14 @@
 .dropdown {
     position: relative;
     display: block;
-    padding: 15px 10px;
+    /* padding:  10px; */
 }
 
 .dropbtn {
     color: var(--color-green);
     display: flex;
     align-items: center;
-    padding: 5px;
+    /* padding: 5px; */
     cursor: pointer;
 }
 
@@ -103,12 +104,12 @@
     border-radius: 10px;
     overflow: hidden;
     animation: profile .3s;
+    z-index: 200;
 }
 
 .dropdown_menu {
     left: 0px;
-    top: 50px;
-    padding: 0;
+    /* top: 0; */
 }
 
 .dropdown_menu_profile {
@@ -196,25 +197,45 @@
 
 .navbar {
     grid-area: navbar;
-    grid-template-areas: "items search .";
+    grid-template-areas: "items search profileItems";
 }
 
 .sticky {
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 100;
-    /* animation: navbar ease 1s; */
+    z-index: 200;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "items search profileItems";
 }
 
+
 .profile_items {
     grid-area: profileItems;
-    display: flex;
-    align-items: center;
-    justify-content: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     color: #fff;
-    /* background-color: aliceblue; */
+}
+
+.profile_items__items, .profilePlace, .show {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+
+.show {
+    animation: profile .2s ease;
+}
+
+.hide {
+    display: none;
+}
+
+.show > div, .profile > div {
+    margin-left: 10px;
 }
 
 .search {
@@ -244,8 +265,9 @@
     /* width: 150px; */
 }
 
-.items > div {
+.items > div, .profile_items__items > div {
     width: 100px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -253,13 +275,29 @@
     border-radius: 5px;
 }
 
-.items > div:hover {
-    background-color: #fff;
-    color: var(--color-green);
+.news {
+    /* position: relative; */
 }
 
-.items > div img {
-    width: 40px;
+.newsCount {
+    margin: 2px;
+    height: 25px;
+    width: 25px;
+    font-size: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    border: 1px solid var(--color-white);
+    /* color: red; */
+    border-radius: 50%;
+}
+
+.items > div:hover, .profile_items__items > div:hover {
+    background-color: #fff;
+    color: var(--color-green);
 }
 
 @keyframes navbar {
