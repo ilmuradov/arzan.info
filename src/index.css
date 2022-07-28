@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
 :root {
-    --color-green: #00c000; /* #00A300 */
+    --color-green: #00A300; /*#00A300*/ /*#00c000*/  
     --color-white: #f5f5f5;
     --color-grey: grey;
+
+    --like-animation: like;
+    --dislike-animation: dislike;
 }
 
 * {
@@ -26,4 +29,37 @@ body::-webkit-scrollbar-thumb {
 
 .app-wrapper {
     font-family: 'Montserrat', sans-serif;
+}
+
+.app-wrapper-content {
+    width: auto;
+}
+
+
+@keyframes like {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes dislike {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

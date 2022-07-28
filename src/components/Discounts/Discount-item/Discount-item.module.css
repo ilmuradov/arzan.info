@@ -1,0 +1,136 @@
+.item {
+    position: relative;
+    overflow: hidden;
+    width: 290px;
+    height: 290px;
+    border-radius: 20px;
+}
+
+.item_img {
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    border-radius: 10px;
+}
+
+.item_img img {
+    width: auto;
+    height: 100%;
+}
+
+.data {
+    position: absolute;
+    /* display: none; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0);
+    transition: .4s;
+}
+
+.data_data {
+    opacity: 0;
+    transition: .2s;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr .5fr 1fr .5fr .5fr;
+    grid-gap: 5px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.data_data_img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data_data_img img {
+    width: 70px;
+    height: 70px;
+}
+
+.discount {
+    font-weight: 600;
+}
+
+.discount span {
+    font-size: 1.3rem;
+
+}
+
+.information {
+    width: 250px;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 1rem;
+}
+
+.actions {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+.actions img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+}
+
+.like {
+    animation: var(--like-animation) .3s;
+}
+
+.dislike {
+    animation: var(--dislike-animation) .3s;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn button {
+    background-color: transparent;
+    border: 2px solid black;
+    outline: none;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.item:hover .item_img {
+    transform: scale(1.2);
+}
+
+
+.data:hover .data_data {
+    opacity: 1;
+    transform: scale(.9);
+}
+
+.item:hover .data {
+    background-color: rgba(255, 255, 255, 0.6);
+}

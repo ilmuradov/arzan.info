@@ -6,7 +6,7 @@
         "name"
         "stories";
     /* width: 90%; */
-    margin: 5vh auto 10vh auto;
+    margin: 5vh auto 20px auto;
     position: relative;
 }
 
@@ -30,17 +30,6 @@
 
 .stories::-webkit-scrollbar {
     display: none;
-}
-
-.stories > div {
-    width: 150px;
-    height: 150px;
-    min-width: 150px;
-    min-height: 150px;
-    border-radius: 50%;
-    border: 2px solid var(--color-green);
-    background-color: var(--color-white);
-    margin-right: 15px;
 }
 
 .prev, .next {
@@ -82,4 +71,14 @@
 
 .next {
     right: 0;
+}
+
+@media screen and (min-width: 1300px) {
+    .stories {
+        padding: 0 10%;
+    }
+
+    .name {
+        padding: 10px 10%;
+    }
 }

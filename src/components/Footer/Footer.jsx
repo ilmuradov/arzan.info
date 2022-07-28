@@ -6,21 +6,24 @@ import payment from "../../assets/img/credit-card.png"
 import phone from "../../assets/img/phone-btn.png"
 import mail from "../../assets/img/email-btn.png"
 import download from "../../assets/img/download-btn.png"
+import logo from "../../assets/logos/arzan-logo2.png"
 
 
 const Footer = () => {
     return (
         <div className={classes.container}>
             <div className={classes.logo_info}>
-                <div>
-                    <h1> Arzan </h1>
-                    <span> Discounts from all over our country </span>
+                <div className={classes.img}>
+                    <img src={logo} alt="Arzan" />
                 </div>
-                <p> Arzan is a mobile application that includes promotions and 
-                    discounts from all over our country. Stay up to date with 
-                    all the best promotions and discounts, or send your own promotions 
-                    and discounts to let everyone know about them. 
-                </p>
+                <div className={classes.p}>
+                    <p> 
+                        Arzan is a mobile application that includes promotions and 
+                        discounts from all over our country. Stay up to date with 
+                        all the best promotions and discounts, or send your own promotions 
+                        and discounts to let everyone know about them. 
+                    </p>
+                </div>
             </div>
             <div className={classes.navigate}>
                 <ul>

@@ -16,23 +16,22 @@
     border-right: 1px solid var(--color-green);
 }
 
-.logo_info > div {
+.p {
+    width: 85%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img {
     display: flex;
     flex-direction: column;
+    width: 50%;
     margin-bottom: 20px;
 }
 
-.logo_info > div h1 {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
+.img img {
+    width: 100%;
 }
 
-.logo_info > div span {
-    margin: 0;
-    padding: 0;
-    font-size: .8rem;
-}
 
 .navigate {
     grid-area: navigate;
@@ -70,4 +69,10 @@
 
 .links {
     grid-area: links;
+}
+
+@media screen and (min-width: 1500px) {
+    .container {
+        padding: 2% 10%;
+    }
 }

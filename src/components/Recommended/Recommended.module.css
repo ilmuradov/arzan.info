@@ -6,7 +6,7 @@
     grid-template-areas: 
         "name"
         "items";
-    margin: 5vh auto;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -90,6 +90,18 @@
     left: 95%;
 }
 
-.next {
-    right: 0;
+@media screen and (min-width: 1500px) {
+    .container {
+        padding: 0 10%;
+    }
+    .name {
+        padding: 10px 0;
+    }
+    .items {
+        padding: 0;
+    }
+    .next {
+        left: auto;
+        right: 5%;
+    }
 }

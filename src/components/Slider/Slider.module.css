@@ -1,29 +1,25 @@
 .container {
-    height: 200px;
-    width: 90%;
-    border-radius: 20px;
+    padding: 0 10%;
+    margin: 5vh auto 0 auto;
+    /* border: 2px solid var(--color-green); */
+}
+
+.img {
     overflow: hidden;
-    margin: 10vh auto 0 auto;
-    /* background-color: black; */
-    border: 2px solid var(--color-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 280px;
+    border-radius: 20px;
 }
 
-.box {
-    /* background: orange; */
-    height: 100%;
-    width: 400px;
-    margin: 0 -400px;
-    animation: move infinite 3s alternate;
+.img img {
+    width: 100%;
+    height: 280px;
 }
 
-@keyframes move {
-    /* 0% {
-        margin-left: 0px;
-      }
-      50% {
-        margin-left: -100px;
-      }
-      100% {
-        margin-left: -200px;
-      } */
-  }
+@media screen and (min-width: 1500px) {
+    .container {
+        width: 80%;
+    }
+}

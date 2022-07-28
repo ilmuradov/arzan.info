@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { Navigate, Route, Routes } from "react-router-dom"
 import { compose } from "redux"
@@ -6,6 +7,12 @@ import Main from "./pages/main"
 import RecommendedPage from "./pages/recommended"
 
 const App = () => {
+    // const handleScroll = (e) => {
+    //     debugger
+    //     console.log('scrollTop: ', e.currentTarget.scrollTop)
+    //     console.log('offsetHeight: ', e.currentTarget.offsetHeight)
+    // }
+
     return (
         <div className="app-wrapper">
             <div className="app-wrapper-content">

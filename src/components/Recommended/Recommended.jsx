@@ -2,6 +2,12 @@ import { useEffect, useRef, useState } from "react"
 import classes from "./Recommended.module.css"
 import prev from "../../assets/img/left-arrow.png"
 import next from "../../assets/img/right-arrow.png"
+import RecommendItem from "./Recommended-item"
+import recommended1 from "../../assets/recommended/1.jpg"
+import recommended2 from "../../assets/recommended/2.jpg"
+import recommended3 from "../../assets/recommended/3.jpg"
+import recommended4 from "../../assets/recommended/4.jpg"
+import recommended5 from "../../assets/recommended/5.jpg"
 
 const Recommended = () => {
     const ref = useRef(null)
@@ -56,13 +62,16 @@ const Recommended = () => {
             </div>
             <div className={classes.items} ref={ref} onScroll={scrollCheck}>
                 {/* <button onClick={() => scrollRight(200)}> next </button> */}
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <RecommendItem photo={recommended1} />
+                {/* <RecommendItem photo={recommended2} /> */}
+                <RecommendItem photo={recommended3} />
+                <RecommendItem photo={recommended4} />
+                <RecommendItem photo={recommended5} />
+                <RecommendItem photo={recommended1} />
+                {/* <RecommendItem photo={recommended2} /> */}
+                <RecommendItem photo={recommended3} />
+                <RecommendItem photo={recommended4} />
+                <RecommendItem photo={recommended5} />
             </div>
 
             {scrollX > 200 && (

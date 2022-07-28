@@ -6,7 +6,7 @@
     grid-template-areas: 
         "name"
         "items";
-    margin: 5vh auto;
+    margin: 20px auto 5vh auto;
 }
 
 .name {
@@ -34,28 +34,38 @@
 .items {
     grid-area: items;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: 1fr;
     /* justify-content: space-between; */
     grid-gap: 20px;
     margin: 0 auto;
 }
 
-.items > div {
-    background-color: var(--color-white);
-    width: 290px;
-    height: 290px;
-    border-radius: 20px;
-}
-
-@media screen and (min-width: 1500px) {
+@media screen and (max-width: 1000px) {
+    .container {
+        padding: 0;
+    }
     .items {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (min-width: 1700) {
+@media screen and (max-width: 1400px) {
     .items {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .name {
+        padding: 0 5%;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    .items {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .name {
+        padding: 0 10%;
     }
 }

@@ -1,0 +1,130 @@
+.quickView {
+    position: fixed;
+    display: flex;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: quickView .15s;
+}
+
+.quickView__hidden {
+    display: none;
+}
+
+.quickContainer {
+    z-index: 239;
+    width: 800px;
+    height: 450px;
+    margin: auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: quickContainer .1s;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+}
+
+.accountInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accountLogo, .accountName, .closeBtn, .photoDiv, .infoDiv, .photoDiv > div {
+    display: flex;
+    align-items: center;
+}
+
+.accountLogo {
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--color-green);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.closeBtn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.accountLogo img, .closeBtn img {
+    width: 100%;
+    height: 100%;   
+}
+
+.discountData {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.photoDiv {
+    justify-content: center;
+}
+
+.photoDiv > div {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.photoDiv > div img {
+    /* overflow: hidden; */
+    height: 100%;
+}
+
+.infoDiv {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.actions {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+.actions img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+}
+
+
+/* .quickView:hover .quickContainer {
+    display: block;
+} */
+
+@keyframes quickView {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes quickContainer {
+    0% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
