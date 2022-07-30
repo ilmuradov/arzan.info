@@ -5,9 +5,9 @@ import News from "../components/News/News"
 const NewsPage = () => {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <News />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

@@ -5,9 +5,9 @@ import Header from "../components/Header/Header"
 const DiscountsPage = () => {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <DiscountsAll />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

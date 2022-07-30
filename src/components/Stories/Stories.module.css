@@ -8,6 +8,8 @@
     /* width: 90%; */
     margin: 0 auto 20px auto;
     position: relative;
+    transition: 1s ease-out;
+    overflow: hidden;
 }
 
 .name {
@@ -19,13 +21,18 @@
     font-weight: 600;
     font-size: 1.5rem;
     color: var(--color-green);
+    transition: all .5s ease-out;
 }
 
 .stories {
     grid-area: stories;
+    width: 10000%;
+    position: relative;
+    top: 0;
     display: flex;
     padding: 0 5%;
     overflow-x: scroll;
+    transition: all .5s ease;
 }
 
 .stories::-webkit-scrollbar {

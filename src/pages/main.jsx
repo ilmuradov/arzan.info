@@ -8,12 +8,12 @@ import Stories from "../components/Stories/Stories"
 const Main = () => {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <Slider />
             <Stories />
             <Recommended />
             <Discounts />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

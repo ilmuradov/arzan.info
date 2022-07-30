@@ -1,0 +1,184 @@
+.container {
+    width: 70%;
+    margin: 5vh auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--color-green);
+    animation: var(--block-animation) var(--transition-middle);
+}
+
+.banner {
+    position: relative;
+    display: flex;
+}
+
+.logoContainer {
+    width: 100%;
+    position: absolute;
+    bottom: -75px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid var(--color-green);
+    margin: 0 auto;
+}
+
+.bannerImg {
+    width: 100%;
+}
+
+.account {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    padding: 80px 10% 0 10%;
+}
+
+.account h1 {
+    color: rgb(73, 73, 73);
+}
+
+.account > div {
+    display: flex;
+    justify-content: center;
+}
+
+.cities {
+    font-weight: 600;
+    color: var(--color-green);
+    font-size: 1.1rem;
+}
+
+.info {
+    color: rgb(73, 73, 73);
+    text-align: center;
+    font-weight: 600;
+}
+
+.followed, .notFollowed {
+    padding: 5px 0;
+}
+
+.followed button, .notFollowed button {
+    padding: 5px 0;
+    width: 140px;
+    border: 1px solid var(--color-green);
+    outline: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.notFollowed button {
+    
+    background-color: #fff;
+    color: var(--color-green);
+}
+
+.followed button {
+    background-color: var(--color-green);
+    color: #fff;
+    animation: follow .3s;
+}
+
+.data {
+    width: auto;
+    display: grid;grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(240, 240, 240);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    /* border: 2px solid var(--color-green); */
+    border-bottom: none;
+    overflow: hidden;
+}
+
+.data_div, .active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.data_div {
+    color: var(--color-green);
+}
+
+.active {
+    color: #fff;
+}
+
+.data > div:hover, .active {
+    background-color: var(--color-green);
+    color: #fff;
+}
+
+.selected {
+    margin: 0 auto 5vh auto;
+    width: 70%;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+}
+
+.name h1 {
+    color: var(--color-green);
+}
+
+.name img {
+    width: 30px;
+    height: 30px;
+}
+
+.postsBlock, .postsList, .followersBlock, .followersList {
+    display: grid;
+    row-gap: 20px;
+    animation: var(--block-animation) var(--transition-middle);
+}
+
+.postsBlock {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.blockItem {
+    margin: 0 auto;
+}
+
+.followersBlock {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.followersBlock button, .followersList button {
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.followersList {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.postsList {
+    grid-template-columns: repeat(2, 1fr);  
+}
+
+@keyframes follow { 
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

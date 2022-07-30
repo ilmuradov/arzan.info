@@ -8,6 +8,7 @@
         "items";
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
 .name {
@@ -19,17 +20,33 @@
     font-weight: 600;
     font-size: 1.5rem;
     color: var(--color-green);
+    position: relative;
+}
+
+.name span {
+    position: absolute;
+    margin-left: 3px;
+    padding: 4px 2px;
+    font-size: .8rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
 }
 
 .all {
-    font-weight: 300;
+    font-weight: 600;
     text-transform: lowercase;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
+    padding: 5px 10px;
+    background-color: var(--color-green);
+    color: #fff;
+    border-radius: 5px;
+    transition: .3s;
 }
 
 .all:hover {
-    text-decoration: underline;
+    transform: scale(1.1);
 }
 
 .items {
@@ -37,6 +54,9 @@
     display: flex;
     padding: 0 5%;
     overflow-x: scroll;
+    position: relative;
+    width: 10000%;
+    transition: all .5s ease-in-out;
 }
 
 .items::-webkit-scrollbar {

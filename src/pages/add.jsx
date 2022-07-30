@@ -5,9 +5,9 @@ import Footer from "../components/Footer/Footer"
 const AddPage = () => {
     return (
         <>
-            <Header /> 
+            {/* <Header />  */}
             <Add />
-            <Footer /> 
+            {/* <Footer />  */}
         </>
     )
 }

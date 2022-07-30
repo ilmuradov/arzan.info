@@ -8,7 +8,7 @@ import logo from "../../../assets/logos/ynamdar.jpg"
 import view from "../../../assets/discounts/view.png"
 import QuickView from "../../QuickView/Quick-view"
 
-export const DiscountItem1 = ({photo}) => {
+const DiscountItem1 = ({photo}) => {
     const [ isSaved, toggleSaved ] = useState(false)
     const [ isLiked, toggleLiked ] = useState(false)
     const [ quickView, toggleQuickView ] = useState(false)
@@ -45,3 +45,5 @@ export const DiscountItem1 = ({photo}) => {
         </div>
     )
 }
+
+export default DiscountItem1

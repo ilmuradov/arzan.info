@@ -1,0 +1,219 @@
+.container {
+    padding: 5vh 10%;
+}
+
+.containerBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.moreBtn {
+    width: 140px;
+    padding: 8px 0;
+    background-color: #fff;
+    font-weight: 600;
+    border: 2px solid var(--color-green);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--color-green);
+    transition: var(--transition-middle);
+    cursor: pointer;
+}
+
+.moreBtn:hover {
+    background-color: var(--color-green);
+    color: #fff;
+}
+
+.header {
+    color: var(--color-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.typeOfView {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.block {
+    width: 100%;
+    height: 100%;
+}
+
+.accounts {
+    display: grid;
+    grid-gap: 5px;
+    margin-top: 20px;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.blockType {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.listType {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.accounts button {
+    width: 100px;
+    margin-top: 10px;
+    font-weight: 600;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.followed {
+    border: 1px solid var(--color-green);
+    background-color: #fff;
+    color: var(--color-green);
+}
+
+.notFollowed {
+    color: #fff;
+    background-color: var(--color-green);
+    border: 1px solid transparent;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition: var(--transition-middle);
+    position: relative;
+}
+
+.itemsBlock {
+    flex-direction: column;
+    animation: blockAnimation var(--transition-middle) ease-out;
+}
+
+.itemsBlock button {
+    width: 70px;
+}
+
+.itemsList {
+    align-items: center;
+    animation: listAnimation var(--transition-middle) ease-out;
+}
+
+.itemsList > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemsList button {
+    width: 80px;
+    padding: 5px 10px;
+    margin-left: auto;
+}
+
+.items:hover {
+    background-color: var(--color-white);
+    transform: scale(1.05);
+}
+
+.text {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text h4 {
+    margin: auto auto 0 0;
+    cursor: pointer;
+}
+
+.text h4:hover {
+    text-decoration: underline;
+}
+
+.text p {
+    font-size: .9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 5px;
+}
+
+.items img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--color-green);
+}
+
+.btnBlock, .btnList {
+    display: flex;
+    align-items: center;
+}
+
+.btnBlock {
+    padding: 0;
+    width: 100%;
+    margin-left: auto;
+    justify-content: center;
+}
+
+.btnList {
+    justify-content: right;
+
+}
+
+.btnBlock button {
+    margin: auto;
+}
+
+.btnList button {
+    margin: auto 0 auto auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: -webkit-box;
+    margin: auto 0;
+}
+
+@keyframes listAnimation {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {}
+}
+
+@keyframes blockAnimation {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {}
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}

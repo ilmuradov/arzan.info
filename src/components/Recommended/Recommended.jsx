@@ -11,56 +11,44 @@ import recommended5 from "../../assets/recommended/5.jpg"
 
 const Recommended = () => {
     const ref = useRef(null)
-    const [scrollX, setscrollX] = useState(0)
-    const [scrolEnd, setscrolEnd] = useState(false)
+
+    var count = 1
+    var items = 0
+    const width = 320
 
     useEffect(() => {
-        if (
-          ref.current &&
-          ref?.current?.scrollWidth === ref?.current?.offsetWidth
-        ) {
-          setscrolEnd(true);
-        } else {
-          setscrolEnd(false);
-        }
-        return () => {};
-      }, [ref?.current?.scrollWidth, ref?.current?.offsetWidth]
-    )
+        items = ref.current.children.length
+    }, [])
 
-    const scrollCheck = () => {
-        setscrollX(ref.current.scrollLeft);
-        if (
-          Math.floor(ref.current.scrollWidth - ref.current.scrollLeft) <=
-          ref.current.offsetWidth
-        ) {
-          setscrolEnd(true);
-        } else {
-          setscrolEnd(false);
+    const prevStory = () => {
+        if(count > 1) {
+            count = count - 2
+            ref.current.style.left = "-" + count * width + "px"
+            count++
+        } else if(count = 1) {
+            count = items - 1
+            ref.current.style.left = "-" + count * width + "px"
+            count++
         }
     }
 
-    const navigate = (href) => {
-        window.location.href = href
+    const nextStory = () => {
+        if(count < items) {
+            ref.current.style.left = "-" + count * width + "px"
+            count ++
+        } else if(count = items) {
+            ref.current.style.left = "0px"
+            count = 1
+        }
     }
-
-    const sideScroll = (element, speed, distance, step) => {
-        let scrollAmount = 0;
-        const slideTimer = setInterval(() => {
-            element.scrollLeft += step;
-            scrollAmount += Math.abs(step);
-            if (scrollAmount >= distance) {
-                clearInterval(slideTimer);  
-            }
-        }, speed);
-      };
 
     return (
         <div className={classes.container}>
             <div className={classes.name}> 
-                <p> Recommended </p> 
+                <p> Recommended (+32) </p> 
                 <p className={classes.all} onClick={() => navigate("/recommended")}> all... </p>
             </div>
-            <div className={classes.items} ref={ref} onScroll={scrollCheck}>
+            <div className={classes.items} ref={ref}>
                 {/* <button onClick={() => scrollRight(200)}> next </button> */}
                 <RecommendItem photo={recommended1} />
                 {/* <RecommendItem photo={recommended2} /> */}
@@ -74,21 +62,17 @@ const Recommended = () => {
                 <RecommendItem photo={recommended5} />
             </div>
 
-            {scrollX > 200 && (
-                <div className={classes.prev}> 
-                    <div onClick={() => sideScroll(ref.current, 15, 320, -10)}>
-                        <img src={prev} alt="Previous" />
-                    </div>
-                </div>  
-            )}
-
-            {!scrolEnd && (
-                <div  className={classes.next}>
-                    <div  onClick={() => sideScroll(ref.current, 15, 320, 10)}>
-                        <img src={next} alt="Next" />
-                    </div>
+            <div className={classes.prev}> 
+                <div onClick={() => prevStory()}>
+                    <img src={prev} alt="Previous" />
                 </div>
-            )}
+            </div>  
+
+            <div  className={classes.next}>
+                <div  onClick={() => nextStory()}>
+                    <img src={next} alt="Next" />
+                </div>
+            </div>
 
         </div>
     )

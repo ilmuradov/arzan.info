@@ -5,9 +5,9 @@ import RecommendedAll from "../components/Recommended/Recommended-all"
 const RecommendedPage = () => {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <RecommendedAll />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

@@ -1,35 +1,257 @@
 .container {
     padding: 5vh 0;
     display: block;
+    animation: var(--block-animation) var(--transition-middle);
 }
 
 .subcontainer {
+    width: 50%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subcontainer h1 {
+    color: var(--color-green);
 }
 
 .choosePhoto {
-    padding: 10px;
+    padding: 20px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
 }
 
 .choosePhoto > div {
     width: 200px;
     height: 200px;
-    margin: 10px;
     background-color: var(--color-white);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .choosePhoto > div:hover {
     background-color: rgb(223, 223, 223);
 }
 
-.choosePhoto > div img {
+.uploadIcon {
     width: 20px;
     margin-left: 5px;
+}
+
+.chosenPhoto {
+    height: 200px;
+}
+
+.choosenPhoto:hover {
+    transform: scale(1.2);
+}
+
+.inputs {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+
+.items, .dropdown {
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+}
+
+.items label, .description label, .dropdown label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-green);
+}
+
+.items input, .items textarea, .hashtagContainer, .dropdown input, .postType {
+    padding: 10px 20px;
+    border: 1px solid var(--color-grey);
+    border-radius: 10px;
+    outline: none;
+    transition: .3s;
+    color: gray;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+/* .description {
+    margin-top: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+} */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown input {
+    cursor: pointer;
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-middle) ease;
+    border: 1px solid var(--color-grey);
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    animation: cities .2s ease;
+}
+
+.dropdown_menu p {
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-green);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.dropdown_menu p:hover {
+    background-color: var(--color-white);
+}
+
+.hidden {
+    display: none;
+}
+
+.hashtags {
+    padding: 10px;
+}
+
+.hashtagContainer, .postType {
+    width: 100%;
+    display: grid;
+    padding: 0;
+    overflow: hidden;
+    margin: 20px 0 0 0;
+
+}
+
+.hashtagContainer {
+    grid-template-columns: repeat(6, 1fr);
+    color: #0090FF;
+}
+
+.hashtag, .active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    transition: var(--transition-fast);
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.hashtag {
+    animation: deselect var(--transition-middle);
+}
+
+.hashtag:hover {
+    background-color: var(--color-white);
+}
+
+.active {
+    border-color: #0090FF;
+    animation: select var(--transition-middle);
+}
+
+.postTypeContainer {
+    padding: 10px;
+}
+
+.postType {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 0;
+}
+
+.postType > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: var(--transition-middle);
+}
+
+.postType > div:hover, .activeType {
+    background-color: var(--color-white);
+    text-decoration: underline 2px;
+}
+
+.activeType {
+    color: var(--color-green);
+}
+
+.btn {
+    width: 50px;
+    margin-left: auto;
+    /* margin-right: 5%; */
+}
+
+.btn img {
+    width: 100%;
+    cursor: pointer;
+}
+
+@keyframes cities {
+    0% {
+        height: 0;
+        margin-top: -20px;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        /* margin-top: 0; */
+    }
+}    
+
+@keyframes select {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes deselect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

@@ -1,0 +1,36 @@
+.container {
+    padding: 5vh 0;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    animation: var(--block-animation) var(--transition-middle);
+}
+
+.container p {
+    color: rgb(73, 73, 73);
+}
+
+.container > p, .container > h3 {
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.container h3 {
+    color: var(--color-green);
+}
+
+.name {
+    color: var(--color-green);
+}
+
+.links {
+    display: flex;
+}
+
+.links img {
+    width: 50px;
+    margin: 5px;
+}

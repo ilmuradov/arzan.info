@@ -16,51 +16,42 @@ import story1 from "../../assets/stories/story1.jpg"
 
 const Stories = () => {
     const ref = useRef(null)
-    const [scrollX, setscrollX] = useState(0)
-    const [scrolEnd, setscrolEnd] = useState(false)
 
+    var count = 1
+    var items = 0
+    const width = 171
     useEffect(() => {
-        if (
-          ref.current &&
-          ref?.current?.scrollWidth === ref?.current?.offsetWidth
-        ) {
-          setscrolEnd(true);
-        } else {
-          setscrolEnd(false);
-        }
-        return () => {};
-      }, [ref?.current?.scrollWidth, ref?.current?.offsetWidth]
-    )
+        items = ref.current.children.length
+    }, [])
 
-    const scrollCheck = () => {
-        setscrollX(ref.current.scrollLeft);
-        if (
-          Math.floor(ref.current.scrollWidth - ref.current.scrollLeft) <=
-          ref.current.offsetWidth
-        ) {
-          setscrolEnd(true);
-        } else {
-          setscrolEnd(false);
+    const prevStory = () => {
+        if(count > 1) {
+            count = count - 2
+            ref.current.style.left = "-" + count * width + "px"
+            count++
+        } else if(count = 1) {
+            count = items - 1
+            ref.current.style.left = "-" + count * width + "px"
+            count++
         }
     }
 
-    const sideScroll = (element, speed, distance, step) => {
-        let scrollAmount = 0;
-        const slideTimer = setInterval(() => {
-            element.scrollLeft += step;
-            scrollAmount += Math.abs(step);
-            if (scrollAmount >= distance) {
-                clearInterval(slideTimer);  
-            }
-        }, speed);
-      };
+    const nextStory = () => {
+        if(count < items) {
+            ref.current.style.left = "-" + count * width + "px"
+            count ++
+        } else if(count = items) {
+            ref.current.style.left = "0px"
+            count = 1
+        }
+    }
 
     return (
         <div className={classes.container}>
             <div className={classes.name}>
                 <p> Stories </p>
             </div>
-            <div className={classes.stories} ref={ref} onScroll={scrollCheck}>
+            <div className={classes.stories} ref={ref} id="stories">
                 <StoryItem img={galam} name="Galam" story={story1} id={1} />
                 <StoryItem img={tekje} name="Tekje" story={story1} id={2} />
                 <StoryItem img={halkmarket} name="Halkmarket" story={story1} id={3} />
@@ -81,21 +72,17 @@ const Stories = () => {
                 <StoryItem img={markayoly} name="Markayoly" story={story1} id={18} />
             </div>
 
-            {scrollX > 200 && (
-                <div className={classes.prev}> 
-                    <div onClick={() => sideScroll(ref.current, 15, 300, -10)}>
-                        <img src={prev} alt="Previous" />
-                    </div>
-                </div>  
-            )}
-
-            {!scrolEnd && (
-                <div  className={classes.next}>
-                    <div  onClick={() => sideScroll(ref.current, 15, 300, 10)}>
-                        <img src={next} alt="Next" />
-                    </div>
+            <div className={classes.prev}> 
+                <div onClick={() => prevStory()}>
+                    <img src={prev} alt="Previous" />
                 </div>
-            )}
+            </div>  
+
+            <div  className={classes.next}>
+                <div onClick={() => nextStory()}>
+                    <img src={next} alt="Next" />
+                </div>
+            </div>
 
         </div>
     )

@@ -1,6 +1,7 @@
 import classes from "./Header.module.css"
 import bell from "../../assets/img/bell.png"
-import location from "../../assets/img/location.png"
+import location_white from "../../assets/img/location-white.png"
+import location_green from "../../assets/img/location-green.png"
 import favorites from "../../assets/img/favorites.png"
 import followings from "../../assets/img/followings.png"
 import settings from "../../assets/img/settings.png"
@@ -11,13 +12,12 @@ import notifications from "../../assets/img/notifications.png"
 import arzan from "../../assets/logos/arzan.png"
 import giper from "../../assets/logos/giper.png"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Header = () => {
     const [scrollPosition, setScrollPosition] = useState(0)
 
-    const navigate = (href) => {
-        window.location.href = href
-    }
+    const navigate = useNavigate()
 
     const handleScroll = () => {
         const position = window.pageYOffset
@@ -36,22 +36,6 @@ const Header = () => {
             <div className={classes.navigation}>
                 <div className={classes.logo}>
                     <img className={classes.logo_img} src={arzan} alt="Arzan.info" onClick={() => navigate("/")} />
-                    <div className={classes.cities}>
-                        <div className={classes.dropdown}>
-                            <div className={classes.dropbtn}>
-                                <p> Ashgabat </p>
-                                <img className={classes.location} src={location} alt="Location" /> 
-                            </div>
-
-                            <div className={classes.dropdown_menu}>
-                                <p>Ahal</p>
-                                <p>Mary</p>
-                                <p>Lebap</p>
-                                <p>Dashoguz</p>
-                                <p>Balkan</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div className={classes.profile}>
@@ -66,7 +50,7 @@ const Header = () => {
                 </div>
                 
                 <div className={classes.items}>
-                    <div> <p> Officials </p> </div>
+                    <div onClick={() => navigate("/officials")}> <p> Officials </p> </div>
                     <div onClick={() => navigate("/add")}> 
                         <p> Add </p> 
                     </div>
@@ -79,7 +63,7 @@ const Header = () => {
                 <div className={classes.profile_items}>
                     <div className={classes.profile_items__items}>
                         <div> <p> Konkurs </p> </div>
-                        <div> <p> About us </p> </div>
+                        <div onClick={() => navigate("/aboutus")}> <p> About us </p> </div>
                     </div>
 
                     <div className={classes.profilePlace}>
@@ -95,6 +79,8 @@ const Header = () => {
 }
 
 const Profile = ({scrollPosition}) => {
+    const navigate = useNavigate()
+
     return (
         <>
             <div className={classes.lang}>
@@ -105,9 +91,22 @@ const Profile = ({scrollPosition}) => {
                     </div>
 
                     <div className={classes.dropdown_menu}>
-                        <p>RU</p>
+                        <p >RU</p>
                         <p>TM</p>
                     </div>
+                </div>
+            </div>
+            <div className={classes.dropdown}>
+                <div className={classes.dropbtn} style={scrollPosition > 100 ? {color: "white"}: {color: "var(--color-green)"}}>
+                    <p> Ashgabat </p>
+                    <img className={classes.location} src={scrollPosition > 100 ? location_white : location_green} alt="Location" /> 
+                </div>
+                <div className={classes.dropdown_menu}>
+                    <p>Ahal</p>
+                    <p>Mary</p>
+                    <p>Lebap</p>
+                    <p>Dashoguz</p>
+                    <p>Balkan</p>
                 </div>
             </div>
 
@@ -128,16 +127,16 @@ const Profile = ({scrollPosition}) => {
                             <img src={giper} alt="Profile" />
                         </div>
                         <div className={classes.name_location}>
-                            <div className={classes.name}> username </div>
+                            <div className={classes.name}> <h3> username </h3> </div>
                             <div className={classes.location}>
-                                <img src={location} alt="Location" /> 
                                 <p> Ashgabat </p>
+                                <img src={location_green} alt="Location" /> 
                             </div>
                         </div>
                     </div>
                     <div className={classes.info}>
-                        <p> <img src={favorites} alt=" " /> Favorites </p>
-                        <p> <img src={followings} alt=" " /> Followings </p>
+                        <p onClick={() => navigate("/favorites")}> <img src={favorites} alt=" "  /> Favorites </p>
+                        <p onClick={() => navigate("/followings")}> <img src={followings} alt=" " /> Followings </p>
                         <p> <img src={settings} alt=" " /> Settings </p>
                         <p> <img src={confirmed} alt=" " /> Confirmed </p>
                         <p> <img src={pending} alt=" " /> Pending </p>

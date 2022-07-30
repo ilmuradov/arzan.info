@@ -29,12 +29,11 @@
 .logo {
     grid-area: logo;
     cursor: pointer;
-    /* background-color: yellowgreen; */
 }
 
 .logo_img {
     width: 60%;
-    margin-left: auto;
+    margin-right: auto;
     /* margin-right: 20px; */
 }
 
@@ -51,7 +50,7 @@
     grid-area: profile;
     color: var(--color-green);
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     /* width: 130px; */
 }
 
@@ -136,6 +135,7 @@
     font-weight: 600;
     display: flex;
     align-items: center;
+    transition: all .1s ease;
     /* width: 100%; */
 }
 
@@ -144,9 +144,8 @@
     width: 20px;
 }
 
-.dropdown_menu p:hover, .dropdown_menu_profile .info p:hover {
+.dropdown_menu p:hover, .info p:hover {
     background-color: var(--color-white);
-    /* color: #fff; */
 }
 
 .dropdown:hover .dropdown_menu, .dropdown:hover .dropdown_menu_profile {

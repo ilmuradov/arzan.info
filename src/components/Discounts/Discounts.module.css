@@ -21,14 +21,19 @@
 }
 
 .all {
-    font-weight: 300;
+    font-weight: 600;
     text-transform: lowercase;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
+    padding: 5px 10px;
+    background-color: var(--color-green);
+    color: #fff;
+    border-radius: 5px;
+    transition: .3s;
 }
 
-.all:hover {
-    text-decoration: underline;
+.all:hover  {
+    transform: scale(1.1);
 }
 
 .items {

@@ -6,7 +6,7 @@ const StoryItem = ({img, name, story, id}) => {
     const [ viewStory, toggleView ] = useState(false)
 
     return (
-        <div className={classes.item}>
+        <div id="story-item" className={classes.item}>
             <img className={classes.img} src={img} alt=" " onClick={() => toggleView(true)} />
             <StoryView img={img} name={name} story={story} id={id} viewStory={viewStory} toggleView={toggleView} />
         </div>
