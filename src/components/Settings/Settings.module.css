@@ -1,0 +1,62 @@
+.container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 300;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+.settingsContainer {
+    width: 1000px;
+    height: 600px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
+    gap: 0;
+    overflow: hidden;
+}
+
+.name {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.name img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+}
+
+.changePhoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.changePhoto img {
+    width: 250px;
+    height: 250px;
+    border: 2px solid var(--color-green);
+    border-radius: 50%;
+}

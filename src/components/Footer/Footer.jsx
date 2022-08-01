@@ -7,9 +7,10 @@ import phone from "../../assets/img/phone-btn.png"
 import mail from "../../assets/img/email-btn.png"
 import download from "../../assets/img/download-btn.png"
 import logo from "../../assets/logos/arzan-logo2.png"
-
+import { useNavigate } from "react-router-dom"
 
 const Footer = () => {
+    const navigate = useNavigate()
     return (
         <div className={classes.container}>
             <div className={classes.logo_info}>
@@ -27,7 +28,7 @@ const Footer = () => {
             </div>
             <div className={classes.navigate}>
                 <ul>
-                    <li> <img src={info} alt="About" /> About </li>
+                    <li onClick={() => navigate("/aboutus")}> <img src={info} alt="About" /> About </li>
                     <li> <img src={question} alt="FAQ" /> FAQ </li>
                     <li> <img src={rules} alt="Rules" /> Rules </li>
                     <li> <img src={payment} alt="Payment" /> Payment </li>

@@ -182,3 +182,19 @@
         transform: scale(1);
     }
 }
+
+@media screen and (max-width: 720px) {
+    .container {
+        width: 100%;
+        border-right: none;
+        border-left: none;
+        border-radius: 0;
+    }
+    .logoContainer {
+        bottom: -50px;
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+}

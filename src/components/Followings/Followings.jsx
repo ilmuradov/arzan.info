@@ -18,16 +18,16 @@ const Followings = () => {
     return (
         <div className={classes.container}>
             <div className={classes.header}> 
-                <h1> Official accounts </h1>
+                <h1> Followings (153) </h1>
                 <div className={classes.typeOfView} onClick={() => toggleIsBlock(!isBlock)}>
                     {isBlock ? 
-                        <img className={classes.block} src={list} alt="List" />
+                        <img src={list} alt="List" />
                         :
-                        <img className={classes.block} src={block} alt="Block" />
+                        <img src={block} alt="Block" />
                     }
                 </div>
             </div>
-            <div className={classes.accounts + " " + (isBlock ? classes.blockType : classes.listType)}>
+            <div className={classes.accounts + " " + (isBlock && classes.blockType)}>
                 <Items img={galam} name="Galam" isBlock={isBlock} />
                 <Items img={halkmarket} name="Halkmarket" isBlock={isBlock} />
                 <Items img={nesipetsin} name="Nesipetsin" isBlock={isBlock} />

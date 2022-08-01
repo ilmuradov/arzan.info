@@ -1,5 +1,42 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
     padding: 5vh 10%;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+}
+
+.accounts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px 5px;
+}
+
+.blockType {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.accounts button {
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.lostType {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header {
+    color: var(--color-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.typeOfView {
+    width: 40px;
+    height: 40px;
+}
+
+.typeOfView img {
+    width: 100%;
 }

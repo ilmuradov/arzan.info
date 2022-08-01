@@ -13,6 +13,7 @@ import arzan from "../../assets/logos/arzan.png"
 import giper from "../../assets/logos/giper.png"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Settings from "../Settings/Settings"
 
 const Header = () => {
     const [scrollPosition, setScrollPosition] = useState(0)
@@ -80,6 +81,7 @@ const Header = () => {
 
 const Profile = ({scrollPosition}) => {
     const navigate = useNavigate()
+    const [ settings, toggleSettings ] = useState(false)
 
     return (
         <>
@@ -96,7 +98,7 @@ const Profile = ({scrollPosition}) => {
                     </div>
                 </div>
             </div>
-            <div className={classes.dropdown}>
+            {/* <div className={classes.dropdown}>
                 <div className={classes.dropbtn} style={scrollPosition > 100 ? {color: "white"}: {color: "var(--color-green)"}}>
                     <p> Ashgabat </p>
                     <img className={classes.location} src={scrollPosition > 100 ? location_white : location_green} alt="Location" /> 
@@ -108,7 +110,7 @@ const Profile = ({scrollPosition}) => {
                     <p>Dashoguz</p>
                     <p>Balkan</p>
                 </div>
-            </div>
+            </div> */}
 
             <div onClick={() => navigate("/notifications")} className={classes.notifications}>
                 <img src={scrollPosition > 100 ? notifications : bell} alt="Notification" />
@@ -137,12 +139,13 @@ const Profile = ({scrollPosition}) => {
                     <div className={classes.info}>
                         <p onClick={() => navigate("/favorites")}> <img src={favorites} alt=" "  /> Favorites </p>
                         <p onClick={() => navigate("/followings")}> <img src={followings} alt=" " /> Followings </p>
-                        <p> <img src={settings} alt=" " /> Settings </p>
+                        <p onClick={() => toggleSettings(true)}> <img src={settings} alt=" " /> Settings </p>
                         <p> <img src={confirmed} alt=" " /> Confirmed </p>
                         <p> <img src={pending} alt=" " /> Pending </p>
                         <p> <img src={logout} alt=" " /> Log out </p>
                     </div>
                 </div>
+                <Settings settings={settings} toggleSettings={toggleSettings} photo={giper} />
             </div>
         </>
     )
