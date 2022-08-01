@@ -81,7 +81,7 @@ const Header = () => {
 
 const Profile = ({scrollPosition}) => {
     const navigate = useNavigate()
-    const [ settings, toggleSettings ] = useState(false)
+    const [ settingsView, toggleSettings ] = useState(false)
 
     return (
         <>
@@ -145,7 +145,7 @@ const Profile = ({scrollPosition}) => {
                         <p> <img src={logout} alt=" " /> Log out </p>
                     </div>
                 </div>
-                <Settings settings={settings} toggleSettings={toggleSettings} photo={giper} />
+                <Settings settings={settingsView} toggleSettings={toggleSettings} photo={giper} />
             </div>
         </>
     )

@@ -9,6 +9,8 @@
     --like-animation: like;
     --dislike-animation: dislike;
     --block-animation: blockAnimation;
+    --quikcView-animation: quickView;
+    --quickContainer-animation: quickContainer;
 
     --transition-fast: .1s;
     --transition-middle: .3s;
@@ -76,4 +78,22 @@ body::-webkit-scrollbar-thumb {
         transform: translateY(20px);
     }
     100% {}
+}
+
+@keyframes quickView {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes quickContainer {
+    0% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

@@ -11,6 +11,7 @@
     height: 100%;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.5);
+    animation: var(--quickView-animation) var(--transition-middle);
 }
 
 .hidden {
@@ -23,10 +24,11 @@
     border-radius: 20px;
     background-color: #fff;
     margin: auto;
-    display: grid;
-    grid-template-rows: 1fr, 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 0;
     overflow: hidden;
+    animation: var(--quickContainer-animation) var(--transition-fast);
 }
 
 .name {
@@ -34,6 +36,7 @@
     display: flex;
     justify-content: space-between;
     height: 50px;
+    color: var(--color-green);
 }
 
 .name img {
@@ -43,15 +46,17 @@
 }
 
 .main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    /* height: 100%; */
 }
 
 .changePhoto {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    height: auto;
 }
 
 .changePhoto img {
@@ -59,4 +64,88 @@
     height: 250px;
     border: 2px solid var(--color-green);
     border-radius: 50%;
+    margin-bottom: auto;
+}
+
+.changePhoto > div {
+    margin-bottom: auto;
+    color: var(--color-green);
+    font-weight: 300;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.configurations {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+}
+
+.dropdown, .changeUsername {
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.main label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-green);
+    cursor: pointer;
+}
+
+.dropdown input, .changeUsername input {
+    padding: 10px 20px;
+    border: 1px solid var(--color-grey);
+    border-radius: 10px;
+    outline: none;
+    transition: .3s;
+    color: gray;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-middle) ease;
+    border: 1px solid var(--color-grey);
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    animation: cities .2s ease;
+}
+
+.banner {
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-green);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.ban {
+    width: 100%;
+}
+
+.delete {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    right: 0;
+    width: 40px;
+    height: 40px;
 }

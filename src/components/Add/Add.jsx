@@ -117,7 +117,7 @@ const Add = () => {
     )
 }
 
-const DropDownMenuElement = ({city, selectCity}) => {
+export const DropDownMenuElement = ({city, selectCity}) => {
     return (
         <p onClick={() =>  selectCity(city)}> {city} </p>
     )

@@ -10,7 +10,7 @@
     height: 100%;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    animation: quickView .15s;
+    animation: var(--quikcView-animation) .15s;
 }
 
 .quickView__hidden {
@@ -26,7 +26,7 @@
     background-color: whitesmoke;
     border-radius: 10px;
     overflow: hidden;
-    animation: quickContainer .1s;
+    animation: var(--quikcContainer-animation) .1s;
     display: grid;
     grid-template-rows: 1fr 5fr 1fr;
 }
@@ -110,21 +110,3 @@
 /* .quickView:hover .quickContainer {
     display: block;
 } */
-
-@keyframes quickView {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes quickContainer {
-    0% {
-        transform: scale(.8);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
