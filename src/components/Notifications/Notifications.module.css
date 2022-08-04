@@ -1,0 +1,112 @@
+.container, .recommendedItems, .discountItems, .type {
+    display: grid;
+}
+
+.container {
+    width: 60%;
+    margin: 5vh auto;
+    grid-template-columns: repeat(1, 1fr);
+    animation: blockAnimation .3s;
+}
+
+.name, .type > div {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    /* border-bottom: 2px solid var(--color-green); */
+    color: var(--color-green);
+}
+
+.recommendedItems, .discountItems {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px 20px;
+    animation: var(--block-animation) var(--transition-middle);
+}
+
+.type {
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
+}
+
+.type > div {
+    justify-content: center;
+    height: 50px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.type > div:hover, .active {
+    background-color: var(--color-green);
+    color: #fff;
+}
+
+.items, .officialNotifications {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    animation: var(--block-animation) var(--transition-middle);
+}
+
+.notification {
+    width: 100%;
+    /* border: 1px solid var(--color-green); */
+    display: flex;
+    transition: all var(--transition-fast);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.notification:hover {
+    background-color: var(--color-white);
+}
+
+.notification img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--color-green);
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.data h3 {
+    width: 100px;
+    cursor: pointer;
+}
+
+.data h3:hover {
+    color: var(--color-green);
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@keyframes blockAnimation {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {}
+}
+
+@keyframes listAnimation {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {}
+}

@@ -1,0 +1,109 @@
+.container {
+    width: 50%;
+    margin: 5vh auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.imgContainer, .account, .logo, .desc, .actions, .actions > div {
+    display: flex;
+    align-items: center;
+}
+
+.imgContainer {
+    width: 60%;
+    margin: auto;
+    justify-content: center; 
+}
+
+.imgContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.info {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 20px auto;
+}
+
+.account {
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.desc {
+    align-items: start;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.desc > div {
+    margin: 10px 0;
+}
+
+.desc > div a {
+    color: blue;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.desc span {
+    font-weight: 600;
+    color: var(--color-green);
+    text-decoration: underline;
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.logo {
+
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--color-green);
+    border-radius: 50%;
+}
+
+.logo h2 {
+    color: var(--color-green);
+    margin-left: 10px;
+}
+
+.info button {
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid var(--color-green);
+    outline: none;
+    background-color: #fff;
+    color: var(--color-green);
+    font-size: 1rem;
+}
+
+.followed {
+    background-color: var(--color-green);
+    color: #fff;
+}
+
+.actions {
+    width: 60%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.actions > div {
+    width: 20px;
+    height: 20px;
+}
+
+.actions > div img {
+    width: 100%;
+}

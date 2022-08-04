@@ -7,8 +7,11 @@ import classes from "./Recommended-item.module.css"
 import logo from "../../assets/logos/ynamdar.jpg"
 import view from "../../assets/discounts/view.png"
 import QuickView from "../QuickView/Quick-view"
+import { NavLink } from "react-router-dom"
 
 const RecommendItem = ({photo}) => {
+    // const extension = photo.split(".").pop()
+    // console.log(extension)
     const [ isSaved, toggleSaved ] = useState(false)
     const [ isLiked, toggleLiked ] = useState(false)
     const [ quickView, toggleQuickView ] = useState(false)
@@ -16,11 +19,14 @@ const RecommendItem = ({photo}) => {
     const payload = {logo, photo, isSaved, isLiked, toggleLiked, toggleSaved}
 
     return (
-        <div className={classes.item}>
+        <NavLink to="/post" className={classes.item}>
             <div className={classes.item_img}>
-                <img src={photo} alt=" " />
+                {/* {extension === "ts" ? 
+                    <video src={photo} autoPlay={true} height="400" width="300" />
+                    :  */}
+                    <img src={photo} alt=" " />
             </div>
-            <div className={classes.data}>
+            {/* <div className={classes.data}>
                 <div className={classes.data_data}>
                     <div className={classes.info}>
                         <div className={classes.data_data_img}>
@@ -39,9 +45,9 @@ const RecommendItem = ({photo}) => {
                         <button> View </button>
                     </div>
                 </div>
-            </div>
-            <QuickView quickView={quickView} toggleQuickView={toggleQuickView} {...payload} />
-        </div>
+            </div> */}
+            {/* <QuickView quickView={quickView} toggleQuickView={toggleQuickView} {...payload} /> */}
+        </NavLink>
     )
 }
 

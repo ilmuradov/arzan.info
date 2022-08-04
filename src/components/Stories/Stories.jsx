@@ -17,9 +17,11 @@ import story1 from "../../assets/stories/story1.jpg"
 const Stories = () => {
     const ref = useRef(null)
 
+    
     var count = 1
     var items = 0
-    const width = 171
+    const width = 170
+    
     useEffect(() => {
         items = ref.current.children.length
     }, [])
@@ -49,34 +51,36 @@ const Stories = () => {
     return (
         <div className={classes.container}>
             <div className={classes.name}>
-                <p> Stories </p>
+                <p> Stories (+28) </p>
             </div>
-            <div className={classes.stories} ref={ref} id="stories">
-                <StoryItem img={galam} name="Galam" story={story1} id={1} />
-                <StoryItem img={tekje} name="Tekje" story={story1} id={2} />
-                <StoryItem img={halkmarket} name="Halkmarket" story={story1} id={3} />
-                <StoryItem img={tmsayt} name="TMSayt" story={story1} id={4} />
-                <StoryItem img={ozan} name="Ozan" story={story1} id={5} />
-                <StoryItem img={nesipetsin} name="NesipEtsin" story={story1} id={6} />
-                <StoryItem img={scopa} name="Scopa" story={story1} id={7} />
-                <StoryItem img={ynamdar} name="Ynamdar" story={story1} id={8} />
-                <StoryItem img={markayoly} name="Markayoly" story={story1} id={9} />
-                <StoryItem img={galam} name="Galam" story={story1} id={10} />
-                <StoryItem img={tekje} name="Tekje" story={story1} id={11} />
-                <StoryItem img={halkmarket} name="Halkmarket" story={story1} id={12} />
-                <StoryItem img={tmsayt} name="TMSayt" story={story1} id={13} />
-                <StoryItem img={ozan} name="Ozan" story={story1} id={14} />
-                <StoryItem img={nesipetsin} name="NesipEtsin" story={story1} id={15} />
-                <StoryItem img={scopa} name="Scopa" story={story1} id={16} />
-                <StoryItem img={ynamdar} name="Ynamdar" story={story1} id={17} />
-                <StoryItem img={markayoly} name="Markayoly" story={story1} id={18} />
+            <div className={classes.storiesContainer}>
+                <div className={classes.stories} ref={ref} id="stories">
+                    <StoryItem img={galam} name="Galam" story={story1} id={1} />
+                    <StoryItem img={tekje} name="Tekje" story={story1} id={2} />
+                    <StoryItem img={halkmarket} name="Halkmarket" story={story1} id={3} />
+                    <StoryItem img={tmsayt} name="TMSayt" story={story1} id={4} />
+                    <StoryItem img={ozan} name="Ozan" story={story1} id={5} />
+                    <StoryItem img={nesipetsin} name="NesipEtsin" story={story1} id={6} />
+                    <StoryItem img={scopa} name="Scopa" story={story1} id={7} />
+                    <StoryItem img={ynamdar} name="Ynamdar" story={story1} id={8} />
+                    <StoryItem img={markayoly} name="Markayoly" story={story1} id={9} />
+                    <StoryItem img={galam} name="Galam" story={story1} id={10} />
+                    <StoryItem img={tekje} name="Tekje" story={story1} id={11} />
+                    <StoryItem img={halkmarket} name="Halkmarket" story={story1} id={12} />
+                    <StoryItem img={tmsayt} name="TMSayt" story={story1} id={13} />
+                    <StoryItem img={ozan} name="Ozan" story={story1} id={14} />
+                    <StoryItem img={nesipetsin} name="NesipEtsin" story={story1} id={15} />
+                    <StoryItem img={scopa} name="Scopa" story={story1} id={16} />
+                    <StoryItem img={ynamdar} name="Ynamdar" story={story1} id={17} />
+                    <StoryItem img={markayoly} name="Markayoly" story={story1} id={18} />
+                </div>
             </div>
 
             <div className={classes.prev}> 
                 <div onClick={() => prevStory()}>
                     <img src={prev} alt="Previous" />
                 </div>
-            </div>  
+            </div>
 
             <div  className={classes.next}>
                 <div onClick={() => nextStory()}>

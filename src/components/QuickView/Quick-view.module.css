@@ -10,10 +10,10 @@
     height: 100%;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    animation: var(--quikcView-animation) .15s;
+    animation: var(--quikcView-animation) var(--transition-fast);
 }
 
-.quickView__hidden {
+.hidden {
     display: none;
 }
 
@@ -26,7 +26,7 @@
     background-color: whitesmoke;
     border-radius: 10px;
     overflow: hidden;
-    animation: var(--quikcContainer-animation) .1s;
+    animation: var(--quickContainer-animation) var(--transition-middle);
     display: grid;
     grid-template-rows: 1fr 5fr 1fr;
 }

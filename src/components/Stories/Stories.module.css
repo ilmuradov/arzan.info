@@ -5,11 +5,10 @@
     grid-template-areas: 
         "name"
         "stories";
-    /* width: 90%; */
     margin: 0 auto 20px auto;
-    position: relative;
     transition: 1s ease-out;
     overflow: hidden;
+    position: relative;
 }
 
 .name {
@@ -17,26 +16,66 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
+    padding: 10px 0;
     font-weight: 600;
     font-size: 1.5rem;
     color: var(--color-green);
     transition: all .5s ease-out;
 }
 
+.hidden {
+    display: none;
+}
+
+/* .storiesContainer {
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+} */
+
+.storiesContainer {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
 .stories {
     grid-area: stories;
-    width: 10000%;
-    position: relative;
-    top: 0;
     display: flex;
     padding: 0 5%;
     overflow-x: scroll;
-    transition: all .5s ease;
+    /* left: -50px; */
+    position: relative;
+    width: 1000%;
+    transition: all var(--transition-middle) ease-in-out;
+}
+
+.stories > div {
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    background-color: var(--color-white);
+    border: 3px solid var(--color-green);
+    margin-right: 20px;
 }
 
 .stories::-webkit-scrollbar {
     display: none;
+}
+
+.prev, .next {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 60px;
+    /* margin-left: 5%; */
+    /* top: 0; */
+    /* width: 100%; */
+    bottom: 0;
+    /* border-radius: 20px; */
 }
 
 .prev, .next {
@@ -73,11 +112,7 @@
 }
 
 .next {
-    left: 95%;
-}
-
-.next {
-    right: 0;
+    right: 5%;
 }
 
 @media screen and (min-width: 1300px) {

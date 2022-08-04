@@ -8,15 +8,9 @@ const Settings = ({ settings, toggleSettings, photo }) => {
     const ref = useRef()
     const [ image, setImage ] = useState([])
     const [ dropdown, toggleDropdown ] = useState(false)
-    const [ city, changeCity ] = useState(null)
 
     const uploadPhoto = () => {
         ref.current.click()
-    }
-
-    const selectCity = (city) => {
-        changeCity(city)
-        toggleDropdown(false)
     }
 
     const getInputPhoto = (event) => {
@@ -54,18 +48,28 @@ const Settings = ({ settings, toggleSettings, photo }) => {
                             <label> Change phone number </label>
                             <input type="number" placeholder="+993 61 00 00 00" />
                         </div>
+                        <div className={classes.changeUsername}>
+                            <label> Category </label>
+                            <input type="text" placeholder="Type category" />
+                        </div>
                         <div className={classes.selectRegion}>
                             <div className={classes.dropdown}>
                                 <label> Edit banners </label>
-                                <input onClick={() => toggleDropdown(!dropdown)} value={city ? city : "Choose city..."} />
+                                <input onClick={() => toggleDropdown(!dropdown)} placeholder="Choose banner" />
                                 <div className={dropdown ? classes.dropdown_menu : classes.hidden} onClick={() => toggleDropdown(false)}>
+                                    <Banner img={banner} />
+                                    <Banner img={banner} />
+                                    <Banner img={banner} />
                                     <Banner img={banner} />
                                 </div>
                             </div>
                         </div>
                         <div className={classes.text}>
                             <label> Description </label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea placeholder="Your description" name="" id="" cols="20" rows="5"></textarea>
+                        </div>
+                        <div className={classes.btn}>
+                            <button> Submit </button>
                         </div>
                     </div>
                 </div>

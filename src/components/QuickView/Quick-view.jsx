@@ -8,8 +8,8 @@ import saved from "../../assets/discounts/saved.png"
 
 const QuickView = ({logo, photo, quickView, toggleQuickView, isSaved, isLiked, toggleLiked, toggleSaved}) => {
     return (
-        <div className={quickView ? classes.quickView : classes.quickView__hidden}>
-            <div className={quickView ? classes.quickContainer : null}>
+        <div className={quickView ? classes.quickView : classes.hidden}>
+            <div className={quickView ? classes.quickContainer : classes.hidden}>
                 <div className={classes.accountInfo}>
                     <div className={classes.accountName}>
                         <div className={classes.accountLogo}>

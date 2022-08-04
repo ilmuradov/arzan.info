@@ -4,7 +4,7 @@
     grid-template-rows: 250px;
     grid-template-areas: "logo navigate links";
     padding: 2%;
-    background-color: rgb(31, 31, 31);
+    background-color: #1f1f1f;
 }
 
 .logo_info {

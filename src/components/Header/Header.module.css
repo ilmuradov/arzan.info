@@ -13,11 +13,11 @@
     grid-area: navigation;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 100px;
+    grid-template-rows: 90px;
     gap: 0;
     grid-template-areas: 
     "logo . profile";
-    padding: 10px 10%;
+    padding: 0 10%;
 }
 
 .logo, .cities, .profile, .notifications, .search, .add {
@@ -32,10 +32,14 @@
 }
 
 .logo_img {
-    width: 60%;
+    width: 70%;
     margin-right: auto;
     /* margin-right: 20px; */
 }
+
+.marginLeft {
+    margin-left: 20px;
+} 
 
 .cities {
     padding: 10px;
@@ -213,7 +217,7 @@
 .profile_items {
     grid-area: profileItems;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto;
     color: #fff;
 }
 
@@ -226,7 +230,7 @@
 }
 
 .show {
-    animation: profile .2s ease;
+    animation: profile var(--transition-middle) ease;
 }
 
 .hide {
@@ -246,7 +250,7 @@
     padding: 10px 10px;
     background-color: transparent;
     border: 2px solid #fff;
-    border-radius: 3px;
+    border-radius: 10px;
     outline: none;
     color: #fff;
     font-size: 1rem;
@@ -264,14 +268,18 @@
     /* width: 150px; */
 }
 
-.items > div, .profile_items__items > div {
+.items > a, .profile_items__items > a {
     width: 100px;
     height: 100%;
+    font-size: 1.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    margin: 1px;
 }
 
 .news {
@@ -294,7 +302,7 @@
     border-radius: 50%;
 }
 
-.items > div:hover, .profile_items__items > div:hover {
+.items > a:hover, .profile_items__items > a:hover, .items > a.active, .profile_items__items > a.active {
     background-color: #fff;
     color: var(--color-green);
 }

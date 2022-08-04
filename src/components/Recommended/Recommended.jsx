@@ -4,16 +4,18 @@ import prev from "../../assets/img/left-arrow.png"
 import next from "../../assets/img/right-arrow.png"
 import RecommendItem from "./Recommended-item"
 import recommended1 from "../../assets/recommended/1.jpg"
-import recommended2 from "../../assets/recommended/2.jpg"
 import recommended3 from "../../assets/recommended/3.jpg"
 import recommended4 from "../../assets/recommended/4.jpg"
 import recommended5 from "../../assets/recommended/5.jpg"
+import recommended6 from "../../assets/recommended/6.gif"
+// import recommended7 from "../../assets/recommended/7.mp4"
 
 const Recommended = () => {
     const ref = useRef(null)
 
     var count = 1
     var items = 0
+    var left = 0
     const width = 320
 
     useEffect(() => {
@@ -36,7 +38,7 @@ const Recommended = () => {
         if(count < items) {
             ref.current.style.left = "-" + count * width + "px"
             count ++
-        } else if(count = items) {
+        } else if(count === items) {
             ref.current.style.left = "0px"
             count = 1
         }
@@ -46,27 +48,33 @@ const Recommended = () => {
         <div className={classes.container}>
             <div className={classes.name}> 
                 <p> Recommended (+32) </p> 
-                <p className={classes.all} onClick={() => navigate("/recommended")}> all... </p>
+                <div>
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <p className={classes.all} onClick={() => navigate("/recommended")}> All... </p>
+                </div>
             </div>
-            <div className={classes.items} ref={ref}>
-                {/* <button onClick={() => scrollRight(200)}> next </button> */}
-                <RecommendItem photo={recommended1} />
-                {/* <RecommendItem photo={recommended2} /> */}
-                <RecommendItem photo={recommended3} />
-                <RecommendItem photo={recommended4} />
-                <RecommendItem photo={recommended5} />
-                <RecommendItem photo={recommended1} />
-                {/* <RecommendItem photo={recommended2} /> */}
-                <RecommendItem photo={recommended3} />
-                <RecommendItem photo={recommended4} />
-                <RecommendItem photo={recommended5} />
+            <div className={classes.itemsContainer}>
+                <div className={classes.items} ref={ref}>
+                    {/* <button onClick={() => scrollRight(200)}> next </button> */}
+                    <RecommendItem photo={recommended6} />
+                    {/* <RecommendItem photo={recommended2} /> */}
+                    <RecommendItem photo={recommended3} />
+                    <RecommendItem photo={recommended4} />
+                    <RecommendItem photo={recommended5} />
+                    <RecommendItem photo={recommended1} />
+                    {/* <RecommendItem photo={recommended2} /> */}
+                    <RecommendItem photo={recommended3} />
+                    <RecommendItem photo={recommended4} />
+                    <RecommendItem photo={recommended5} />
+                </div>
             </div>
 
             <div className={classes.prev}> 
                 <div onClick={() => prevStory()}>
                     <img src={prev} alt="Previous" />
                 </div>
-            </div>  
+            </div>
 
             <div  className={classes.next}>
                 <div  onClick={() => nextStory()}>

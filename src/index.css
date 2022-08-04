@@ -3,7 +3,7 @@
 
 :root {
     --color-green: #00A300; /*#00A300*/ /*#00c000*/  
-    --color-white: #dfdfdf;
+    --color-white: #f5f5f5;
     --color-grey: #c7c7c7;
 
     --like-animation: like;
@@ -23,6 +23,7 @@
 
 body {
     background-color: #fff;
+    transition: all var(--transition-middle);
 }
 
 body::-webkit-scrollbar {

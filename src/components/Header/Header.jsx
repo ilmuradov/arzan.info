@@ -9,14 +9,16 @@ import confirmed from "../../assets/img/confirmed.png"
 import pending from "../../assets/img/pending.png"
 import logout from "../../assets/img/logout.png"
 import notifications from "../../assets/img/notifications.png"
-import arzan from "../../assets/logos/arzan.png"
+import arzan from "../../assets/logos/logo.png"
 import giper from "../../assets/logos/giper.png"
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import Settings from "../Settings/Settings"
 
 const Header = () => {
     const [scrollPosition, setScrollPosition] = useState(0)
+
+    const scrollAmount = 90
 
     const navigate = useNavigate()
 
@@ -37,39 +39,48 @@ const Header = () => {
             <div className={classes.navigation}>
                 <div className={classes.logo}>
                     <img className={classes.logo_img} src={arzan} alt="Arzan.info" onClick={() => navigate("/")} />
+                    <div className={classes.dropdown + " " + classes.marginLeft}>
+                        <div className={classes.dropbtn} style={scrollPosition > scrollAmount ? {color: "white"}: {color: "var(--color-green)"}}>
+                            <p> Ashgabat </p>
+                            <img className={classes.location} src={scrollPosition > scrollAmount ? location_white : location_green} alt="Location" /> 
+                        </div>
+                        <div className={classes.dropdown_menu}>
+                            <p>Ahal</p>
+                            <p>Mary</p>
+                            <p>Lebap</p>
+                            <p>Dashoguz</p>
+                            <p>Balkan</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className={classes.profile}>
-                    <Profile scrollPosition={scrollPosition} />
+                    <Profile scrollPosition={scrollPosition} scrollAmount={scrollAmount} />
                 </div>
             </div>
 
-            <div className={scrollPosition > 100 ? classes.sticky : classes.navbar}>
+            <div className={scrollPosition > scrollAmount ? classes.sticky : classes.navbar}>
                 
                 <div className={classes.search}>
                     <input type="text" placeholder="Search..." />
                 </div>
                 
                 <div className={classes.items}>
-                    <div onClick={() => navigate("/officials")}> <p> Officials </p> </div>
-                    <div onClick={() => navigate("/add")}> 
-                        <p> Add </p> 
-                    </div>
-                    <div onClick={() => navigate("/news")}> 
-                        <p> News </p>
-                    </div>
-                    <div> <p> Top Users </p> </div>
+                    <NavLink to="/officials" className={({isActive}) => isActive ? classes.active : undefined}> <p> Officials </p> </NavLink>
+                    <NavLink to="/add" className={({isActive}) => isActive ? classes.active : undefined}> <p> Add </p> </NavLink>
+                    <NavLink to="/news" className={({isActive}) => isActive ? classes.active : undefined}> <p> News </p> </NavLink>
                 </div>
 
                 <div className={classes.profile_items}>
                     <div className={classes.profile_items__items}>
-                        <div> <p> Konkurs </p> </div>
-                        <div onClick={() => navigate("/aboutus")}> <p> About us </p> </div>
+                        <NavLink to="/top" className={({isActive}) => isActive ? classes.active : undefined}> <p> Top Users </p> </NavLink>
+                        <NavLink to="/konkurs" className={({isActive}) => isActive ? classes.active : undefined}> <p> Konkurs </p> </NavLink>
+                        <NavLink to="aboutus" className={({isActive}) => isActive ? classes.active : undefined}> <p> About us </p> </NavLink>
                     </div>
 
                     <div className={classes.profilePlace}>
-                        <div className={scrollPosition > 100 ? classes.show : classes.hide}>
-                            <Profile scrollPosition={scrollPosition} />
+                        <div className={scrollPosition > scrollAmount ? classes.show : classes.hide}>
+                            <Profile scrollPosition={scrollPosition} scrollAmount={scrollAmount} />
                         </div>
                     </div>
                 </div>
@@ -79,7 +90,7 @@ const Header = () => {
     )
 }
 
-const Profile = ({scrollPosition}) => {
+const Profile = ({scrollPosition, scrollAmount}) => {
     const navigate = useNavigate()
     const [ settingsView, toggleSettings ] = useState(false)
 
@@ -88,7 +99,7 @@ const Profile = ({scrollPosition}) => {
             <div className={classes.lang}>
                 <div className={classes.dropdown}>
                     <div className={classes.dropbtn} 
-                        style={scrollPosition > 100 ? {color: "white"}: {color: "var(--color-green)"}}> 
+                        style={scrollPosition > scrollAmount ? {color: "white"}: {color: "var(--color-green)"}}> 
                         EN 
                     </div>
 
@@ -98,22 +109,9 @@ const Profile = ({scrollPosition}) => {
                     </div>
                 </div>
             </div>
-            {/* <div className={classes.dropdown}>
-                <div className={classes.dropbtn} style={scrollPosition > 100 ? {color: "white"}: {color: "var(--color-green)"}}>
-                    <p> Ashgabat </p>
-                    <img className={classes.location} src={scrollPosition > 100 ? location_white : location_green} alt="Location" /> 
-                </div>
-                <div className={classes.dropdown_menu}>
-                    <p>Ahal</p>
-                    <p>Mary</p>
-                    <p>Lebap</p>
-                    <p>Dashoguz</p>
-                    <p>Balkan</p>
-                </div>
-            </div> */}
 
             <div onClick={() => navigate("/notifications")} className={classes.notifications}>
-                <img src={scrollPosition > 100 ? notifications : bell} alt="Notification" />
+                <img src={scrollPosition > scrollAmount ? notifications : bell} alt="Notification" />
             </div>
 
             <div className={classes.dropdown}>

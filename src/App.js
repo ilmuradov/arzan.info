@@ -11,9 +11,12 @@ import FavoritesPage from "./pages/favorites"
 import FollowingsPage from "./pages/followings"
 import Main from "./pages/main"
 import NewsPage from "./pages/news"
+import NotificationsPage from "./pages/notifications"
 import OfficialAccountPage from "./pages/officialAccountPage"
 import OfficialsPage from "./pages/officials"
+import PostPage from "./pages/post"
 import RecommendedPage from "./pages/recommended"
+import TopUsersPage from "./pages/topUsers"
 
 const App = () => {
     return (
@@ -31,6 +34,9 @@ const App = () => {
                     <Route path="/aboutus" element={<AboutUsPage />} />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/followings" element={<FollowingsPage />} />
+                    <Route path="/notifications" element={<NotificationsPage />} />
+                    <Route path="/top" element={<TopUsersPage />} />
+                    <Route path="/post" element={<PostPage />} />
                 </Routes>
             </div>
             <Footer/>

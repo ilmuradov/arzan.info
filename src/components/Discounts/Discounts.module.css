@@ -22,7 +22,6 @@
 
 .all {
     font-weight: 600;
-    text-transform: lowercase;
     font-size: 1rem;
     cursor: pointer;
     padding: 5px 10px;
