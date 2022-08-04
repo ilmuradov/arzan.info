@@ -1,9 +1,9 @@
 .container {
-    width: 50%;
+    width: 80%;
     margin: 5vh auto;
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .imgContainer, .account, .logo, .desc, .actions, .actions > div {
@@ -12,7 +12,7 @@
 }
 
 .imgContainer {
-    width: 60%;
+    width: 80%;
     margin: auto;
     justify-content: center; 
 }
@@ -24,15 +24,13 @@
 }
 
 .info {
-    width: 70%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    margin: 20px auto;
 }
 
 .account {
     width: 100%;
-    padding: 10px;
     justify-content: space-between;
 }
 
@@ -53,11 +51,15 @@
     margin-left: 10px;
 }
 
+/* .desc p {
+    color: darkgray;
+} */
+
 .desc span {
     font-weight: 600;
     color: var(--color-green);
-    text-decoration: underline;
-    font-size: 1.1rem;
+    /* text-decoration: underline; */
+    font-size: 1rem;
     margin: 5px 0;
 }
 
@@ -72,25 +74,36 @@
     border-radius: 50%;
 }
 
-.logo h2 {
+.logo a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: var(--color-green);
     margin-left: 10px;
+}
+
+.logo a:hover {
+    text-decoration: underline;
 }
 
 .info button {
     width: 100px;
     padding: 5px;
     border-radius: 10px;
-    border: 1px solid var(--color-green);
     outline: none;
+    font-size: 1rem;
+    border: 1px solid var(--color-green);
+}
+
+.notFollowed {
     background-color: #fff;
     color: var(--color-green);
-    font-size: 1rem;
 }
 
 .followed {
     background-color: var(--color-green);
     color: #fff;
+    animation: var(--dislike-animation) var(--transition-middle);
 }
 
 .actions {

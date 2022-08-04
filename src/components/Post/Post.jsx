@@ -5,9 +5,11 @@ import save from "../../assets/discounts/save.png"
 import saved from "../../assets/discounts/saved.png"
 import view from "../../assets/discounts/view.png"
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 
 const Post = ({ img, logo, name, desc }) => {
     const [ followed, toggleFollowed ] = useState(false)
+    console.log(followed)
 
     desc = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat at laborum perspiciatis expedita, aperiam ad, labore unde reprehenderit magnam maiores possimus fuga numquam commodi dolorum consequatur a dolore corrupti dolores vero sapiente dolorem. Blanditiis molestiae, autem perferendis facere itaque nulla omnis ipsum aliquam minima deleniti odit voluptate placeat accusamus amet?"
     return (
@@ -19,9 +21,9 @@ const Post = ({ img, logo, name, desc }) => {
                 <div className={classes.account}>
                     <div className={classes.logo}>
                         <img src={logo} alt="" />
-                        <h2> {name} </h2>
+                        <NavLink to="/officials/:id"> {name} </NavLink>
                     </div>
-                    <button onClick={() => toggleFollowed(!followed)} className={followed ? classes.followed : null}> Follow </button>
+                    <button onClick={() => toggleFollowed(!followed)} className={followed ? classes.followed : classes.notFollowed}> {followed ? "Followed" : "Follow"} </button>
                 </div>
                 <div className={classes.desc}>
                         <span> Description </span>
@@ -39,11 +41,11 @@ const Post = ({ img, logo, name, desc }) => {
                         <a> halkmarket@halkmarket.com </a>
                     </div>
                 </div>
-            </div>
-            <div className={classes.actions}>
-                <div> <img src={save} alt="Save" /> </div>
-                <div> 54 <img src={view} alt="Viewed" /> </div>
-                <div> <img src={like} alt="Like" /> </div>
+                <div className={classes.actions}>
+                    <div> <img src={save} alt="Save" /> </div>
+                    <div> 54 <img src={view} alt="Viewed" /> </div>
+                    <div> <img src={like} alt="Like" /> </div>
+                </div>
             </div>
             
         </div>
