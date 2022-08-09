@@ -1,8 +1,10 @@
 import Notifications from "../components/Notifications/Notifications"
 
-const NotificationsPage = () => {
+const NotificationsPage = ({ fromTop }) => {
     return (
-        <Notifications />
+        <div onLoad={fromTop}> 
+            <Notifications />
+        </div>
     )
 }
 

@@ -1,8 +1,10 @@
 import Favorites from "../components/Favorites/Favorites"
 
-const FavoritesPage = () => {
+const FavoritesPage = ({ fromTop }) => {
     return (
-        <Favorites />
+        <div onLoad={fromTop}>
+            <Favorites />
+        </div>
     )
 }
 

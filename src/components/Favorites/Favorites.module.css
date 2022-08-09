@@ -14,14 +14,21 @@
 }
 
 .name {
-    /* border-bottom: 2px solid var(--color-green); */
     color: var(--color-green);
 }
 
 .recommendedItems, .discountItems {
+    animation: var(--block-animation) var(--transition-middle);
+}
+
+.recommendedItems {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 0;
+}
+
+.discountItems {
     grid-template-columns: repeat(5, 1fr);
     gap: 20px 20px;
-    animation: var(--block-animation) var(--transition-middle);
 }
 
 .type {

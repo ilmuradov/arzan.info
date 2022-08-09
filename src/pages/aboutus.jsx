@@ -1,8 +1,8 @@
 import AboutUs from "../components/AboutUs/AboutUs"
 
-const AboutUsPage = () => {
+const AboutUsPage = ({ fromTop }) => {
     return (
-        <div>
+        <div onLoad={fromTop}>
             <AboutUs />
         </div>
     )

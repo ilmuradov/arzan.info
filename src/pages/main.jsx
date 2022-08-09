@@ -5,9 +5,9 @@ import Recommended from "../components/Recommended/Recommended"
 import Slider from "../components/Slider/Slider"
 import Stories from "../components/Stories/Stories"
 
-const Main = () => {
+const Main = ({ fromTop }) => {
     return (
-        <div>
+        <div onLoad={fromTop}>
             {/* <Header /> */}
             <Slider />
             <Stories />

@@ -1,7 +1,15 @@
 .container {
-    width: 80%;
-    margin: 5vh auto;
+    width: 100%;
+    margin: 5vh 0;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+}
+
+.postContainer {
+    width: 80%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -12,8 +20,9 @@
 }
 
 .imgContainer {
-    width: 80%;
+    width: 90%;
     margin: auto;
+    /* margin-left: 0; */
     justify-content: center; 
 }
 
@@ -24,7 +33,8 @@
 }
 
 .info {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }
@@ -119,4 +129,12 @@
 
 .actions > div img {
     width: 100%;
+}
+
+.liked, .saved {
+    animation: var(--like-animation) var(--transition-fast);
+}
+
+.notLiked, .notSaved {
+    animation: var(--dislike-animation) var(--transition-fast);
 }

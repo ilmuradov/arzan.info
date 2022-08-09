@@ -1,8 +1,10 @@
 import Followings from "../components/Followings/Followings"
 
-const FollowingsPage = () => {
+const FollowingsPage = ({ fromTop }) => {
     return (
-        <Followings />
+        <div onLoad={fromTop}>
+            <Followings />
+        </div>
     )
 }
 

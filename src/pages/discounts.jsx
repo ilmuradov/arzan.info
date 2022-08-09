@@ -2,12 +2,10 @@ import DiscountsAll from "../components/Discounts/Discounts-all"
 import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
 
-const DiscountsPage = () => {
+const DiscountsPage = ({ fromTop }) => {
     return (
-        <div>
-            {/* <Header /> */}
+        <div onLoad={fromTop}>
             <DiscountsAll />
-            {/* <Footer /> */}
         </div>
     )
 }

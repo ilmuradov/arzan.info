@@ -1,10 +1,8 @@
-import Footer from "../components/Footer/Footer"
-import Header from "../components/Header/Header"
 import News from "../components/News/News"
 
-const NewsPage = () => {
+const NewsPage = ({ fromTop }) => {
     return (
-        <div>
+        <div onLoad={fromTop}>
             {/* <Header /> */}
             <News />
             {/* <Footer /> */}

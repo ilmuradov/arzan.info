@@ -19,24 +19,28 @@ import RecommendedPage from "./pages/recommended"
 import TopUsersPage from "./pages/topUsers"
 
 const App = () => {
+    const fromTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     return (
         <div className="app-wrapper">
             <Header />
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/recommended" element={<RecommendedPage />} />
-                    <Route path="/discounts" element={<DiscountsPage />} />
-                    <Route path="/news" element={<NewsPage />} />
-                    <Route path="/add" element={<AddPage />} />
-                    <Route path="/officials" element={<OfficialsPage />} />
-                    <Route path="/officials/:id" element={<OfficialAccountPage />} />
-                    <Route path="/aboutus" element={<AboutUsPage />} />
-                    <Route path="/favorites" element={<FavoritesPage />} />
-                    <Route path="/followings" element={<FollowingsPage />} />
-                    <Route path="/notifications" element={<NotificationsPage />} />
-                    <Route path="/top" element={<TopUsersPage />} />
-                    <Route path="/post" element={<PostPage />} />
+                    <Route path="/" element={<Main fromTop={fromTop} />} />
+                    <Route path="/recommended" element={<RecommendedPage fromTop={fromTop} />} />
+                    <Route path="/discounts" element={<DiscountsPage  fromTop={fromTop} />} />
+                    <Route path="/news" element={<NewsPage  fromTop={fromTop} />} />
+                    <Route path="/add" element={<AddPage  fromTop={fromTop} />} />
+                    <Route path="/officials" element={<OfficialsPage  fromTop={fromTop} />} />
+                    <Route path="/officials/:id" element={<OfficialAccountPage  fromTop={fromTop} />} />
+                    <Route path="/aboutus" element={<AboutUsPage  fromTop={fromTop} />} />
+                    <Route path="/favorites" element={<FavoritesPage  fromTop={fromTop} />} />
+                    <Route path="/followings" element={<FollowingsPage  fromTop={fromTop} />} />
+                    <Route path="/notifications" element={<NotificationsPage  fromTop={fromTop} />} />
+                    <Route path="/top" element={<TopUsersPage  fromTop={fromTop} />} />
+                    <Route path="/post" element={<PostPage  fromTop={fromTop} />} />
                 </Routes>
             </div>
             <Footer/>

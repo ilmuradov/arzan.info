@@ -15,7 +15,6 @@ const Recommended = () => {
 
     var count = 1
     var items = 0
-    var left = 0
     const width = 320
 
     useEffect(() => {

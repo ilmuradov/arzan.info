@@ -1,11 +1,9 @@
 import Officials from "../components/Officials/Officials"
 
-const OfficialsPage = () => {
+const OfficialsPage = ({ fromTop }) => {
     return (
-        <div>
-            {/* <Header /> */}
+        <div onLoad={fromTop}>
             <Officials />
-            {/* <Footer /> */}
         </div>
     )
 }

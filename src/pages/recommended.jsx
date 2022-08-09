@@ -2,12 +2,10 @@ import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
 import RecommendedAll from "../components/Recommended/Recommended-all"
 
-const RecommendedPage = () => {
+const RecommendedPage = ({ fromTop }) => {
     return (
-        <div>
-            {/* <Header /> */}
+        <div onLoad={fromTop}>
             <RecommendedAll />
-            {/* <Footer /> */}
         </div>
     )
 }
